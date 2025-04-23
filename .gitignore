@@ -1,0 +1,17 @@
+# IntelliJ
+.idea/
+!.idea/codeStyles/
+!.idea/runConfigurations/
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Archivos del módulo
+*.iml
+
+# Output de compilación
+**/out/
+
+# Archivos del sistema
+*.log
+*.tmp
+.DS_Store
