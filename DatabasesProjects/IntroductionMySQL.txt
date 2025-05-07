@@ -30,7 +30,10 @@ INSERT INTO Courses (courseId, courseName, courseDescription, studentId) VALUES
 (3, 'Introduction to Databases', 'Fundamentals of database design and SQL', 5);
 
 ---------------------------------------------------------------------------------------------
-A database is an organized collection of structured data stored in tables with rows and columns. It stores information so it can be easily handled. Databases are essential for efficiently handling large amounts of information while ensuring data accuracy, security, and quick retrieval. Schools use them for student records, banks for transaction processing, hospitals for patient data, e-commerce platforms like Amazon for product catalogs and orders, and social media for user profile. Without databases, managing the data would be impossible.
+A database is an organized collection of structured data stored in tables with rows and columns. 
+It stores information so it can be easily handled. Databases are essential for efficiently handling large amounts of information while ensuring data accuracy, security, and quick retrieval. 
+Schools use them for student records, banks for transaction processing, hospitals for patient data, e-commerce platforms like Amazon for product catalogs and orders, and social media for user profile. 
+Without databases, managing the data would be impossible.
 
 ---------------------------------------------------------------------------------------------
 Question 1: Why did you choose specific data types for the columns in the Students table? Explain how these data types help in storing student information efficiently.
