@@ -1,0 +1,49 @@
+CREATE DATABASE StudentRecords;
+
+CREATE TABLE Students (
+	studentId INT PRIMARY KEY,
+    firstName varchar(50),
+    lastName VARCHAR(50),
+    age INT,
+    email VARCHAR(100)
+);
+
+INSERT INTO Students ( studentId, firstName, lastName, age, email) VALUES
+(1, 'John', 'Doe', 20, 'john.doe@example.com'),
+(2, 'Jane', 'Smith', 22, 'jane.smith@example.com'),
+(3, 'Alex', 'Medero', 26, 'alex.medero@example.com'),
+(4, 'Ale', 'Doce', 22, 'ale.doce@example.com'),
+(5, 'Alex', 'Cosio', 22, 'alex.cosio@example.com');
+
+CREATE TABLE Courses (
+	courseId INT PRIMARY KEY,
+    courseName VARCHAR(100),
+    courseDescription VARCHAR(300),
+    studentId INT,
+    CONSTRAINT FK_studentCourse FOREIGN KEY (studentId)
+    REFERENCES Students(studentId)
+);
+
+INSERT INTO Courses (courseId, courseName, courseDescription, studentId) VALUES
+(1, 'Data Structures', 'Algorithms and data organization', 1),
+(2, 'Web Development', 'Building modern web applications', 4),
+(3, 'Introduction to Databases', 'Fundamentals of database design and SQL', 5);
+
+---------------------------------------------------------------------------------------------
+A database is an organized collection of structured data stored in tables with rows and columns. It stores information so it can be easily handled. Databases are essential for efficiently handling large amounts of information while ensuring data accuracy, security, and quick retrieval. Schools use them for student records, banks for transaction processing, hospitals for patient data, e-commerce platforms like Amazon for product catalogs and orders, and social media for user profile. Without databases, managing the data would be impossible.
+
+---------------------------------------------------------------------------------------------
+Question 1: Why did you choose specific data types for the columns in the Students table? Explain how these data types help in storing student information efficiently.
+
+	It's a good practice to have a identifier for each row, so first i use a studentId of type INT because is a numeric value and a PRIMARY KEY to avoid duplicates and 
+	to use as a reference for relationships with other tables. The firstName and lastName are VARCHAR(50) because it represent text. The age is an INT for numeric value. 	The email also a VARCHAR but with size 100.
+
+Question 2: What are some benefits of using databases over simple file storage systems (like spreadsheets)?
+
+	Using database helps you representing the data type you need in each column so you can handle better the memory you need. Also it avoids duplicates and you can
+	easily represent relationships in tables. Once a transaction is executed it's durable even if you close the connection, his concurrency improve working 	collaboratively.
+
+
+
+
+
