@@ -1,0 +1,77 @@
+
+CREATE DATABASE EmployeeManagement;
+
+CREATE TABLE Department (
+	departmentId INT PRIMARY KEY,
+    departmentName VARCHAR(100)
+);
+
+CREATE TABLE Employee (
+	employeeId INT PRIMARY KEY,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    age INT,
+    email VARCHAR(100) UNIQUE,
+    departmentId INT,
+    CONSTRAINT departmentId FOREIGN KEY (departmentId) 
+    REFERENCES Department(departmentId)
+);
+
+CREATE TABLE Project (
+	projectId INT PRIMARY KEY,
+    projectName VARCHAR(100),
+    projectBudget DECIMAL,
+    managerId INT,
+    CONSTRAINT managerId FOREIGN KEY (managerId)
+    REFERENCES Employee(employeeId)
+);
+
+
+INSERT INTO Department (departmentId, departmentName) VALUES
+(1, 'Engineering'),
+(2, 'HR'),
+(3, 'Marketing');
+
+INSERT INTO Employee (employeeId, firstName, lastName, age, email, departmentId) VALUES
+(1, 'Ernesto', 'Guevara', 30, 'netoruk@gmail.com', 1),
+(2, 'Arturo', 'Doce', 50, 'artur@gmail.com', 2),
+(3, 'Rafael', 'Medero', 22, 'rafi@gmail.com', 3),
+(4, 'Fernando', 'Figueroa', 29, 'figue@gmail.com', 1),
+(5, 'Rocko', 'Ferrioni', 32, 'rococo@gmail.com', 2);
+
+INSERT INTO Project (projectId, projectName, projectBudget, managerId) VALUES
+(1, 'Web', 5000.00, 1),
+(2, 'Backend', 7500.00, 4),
+(3, 'Tiktok', 1000.00, 3);
+
+
+SELECT Employee.firstName, Employee.lastName, Department.departmentName FROM Employee
+LEFT JOIN Department ON Employee.departmentId = Department.departmentId;
+
+SELECT Project.projectName, Employee.firstName, Employee.lastName FROM Project
+LEFT JOIN Employee ON Project.managerId = Employee.employeeId;
+
+SELECT Employee.firstName, Employee.lastName, Employee.age From Employee
+WHERE departmentId = (SELECT departmentId FROM Department WHERE departmentName = 'Engineering');
+
+
+CREATE VIEW EmployeeDetails AS
+SELECT Employee.employeeId, Employee.firstName, Employee.lastName, Department.departmentName
+FROM Employee
+INNER JOIN Department ON Employee.departmentId = Department.departmentId;
+
+CREATE VIEW ActiveProjects AS
+SELECT Project.projectName, Project.projectBudget, Project.managerId
+FROM Project
+WHERE projectBudget > 1000;
+
+--------------------------------------------------------------------------------------------
+
+First, I designed the tables, one for employees, one for departments, and one for projects. 
+It’s necessary to create first the departments table, then the employees table, this table has a reference to department, then the projects table, this table has a reference to employees table. 
+Every table has his own identifier as a PRIMARY KEY and a name. 
+The employee table has a FOREIGN KEY to the departmentId, so with this I have a relationship between Employee and Department and I can retrieve both data related to an Employee.
+The project table has a FOREIGN KEY to the employeeId called managerId, so by this way I can retrieve the projects data and the manager data related to the project.
+With the help of joins I can be able to retrieve the data across tables, so it was easy to get a table of all the employees with his respective department name or get all the projects with his respective manager name.
+For security reasons I choose to create a view, there are some columns that not everyone can see, so in the case of the employees I only want to retrieve the name and his department name, and for projects I use it to retrieve the combine data of the project properties and the manager name.
+I challenge I encounter is to create the view without knowing if the query was working well, then I realized that first I need to execute only the SELECT and then when it’s working well I execute the view, also I write something wrong in a view so to update it I need to use the CREATE OR REPLACE.
