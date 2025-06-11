@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MySite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="portfolio">
+        <div class="row m-12">
+            <div class="card custom-card col-12 col-md-4">
+                <img src="cliqueMaximo.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">Algoritmo Bron-Kerbosch</h5>
+                    <p class="card-text">This is a card description.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="card custom-card col-12 col-md-4">
+                <img src="banearIp.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">API Fraudes</h5>
+                    <p class="card-text">This is a card description.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="card custom-card col-12 col-md-4">
+                <img src="Coworking-Polanco-Work-Polanco.jpeg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">Elevadores WeWork Polanco</h5>
+                    <p class="card-text">This is a card description.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="w-50 p-5" id="contact">
+        <fieldset>
+            <legend>Contacto</legend>
+            <div class="form-group mb-12">
+                <label for="exampleInputName">Name</label>
+                <input type="email" class="form-control" id="exampleInputName" placeholder="Enter name" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputTextArea">Description</label>
+                <textarea class="form-control" id="message" name="message" rows="5"
+                    placeholder="Description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
