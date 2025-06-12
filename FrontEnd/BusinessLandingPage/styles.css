@@ -1,0 +1,15 @@
+body {
+    padding-top: 57px;
+}
+
+.hero-section-bg {
+    background-image: url(hero-section-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.custom-footer {
+    background: var(--primary-color);
+    color: black;
+    padding: 40px 0;
+}
