@@ -1,0 +1,18 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#btnInstructions {
+    margin-top: 20px;
+    width: 100px;
+}
+
+#frmData {
+    border: 2px black solid;
+    padding: 20px;
+}
+
+.btnDisplay {
+    text-align: center;
+}
