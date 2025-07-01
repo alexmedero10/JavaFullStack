@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    text-align: center;
+    padding: 25px;
+}
+
+#main {
+    text-align: center;
+    padding: 25px;
+}
+
+#formTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#submitTask {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#taskList, #completedTaskList {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    background: #f8f9fa;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
